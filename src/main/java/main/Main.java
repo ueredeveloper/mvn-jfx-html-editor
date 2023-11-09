@@ -8,9 +8,11 @@ package main;
 import java.io.IOException;
 import com.google.gson.Gson;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.Clipboard;
@@ -18,8 +20,8 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.Stage;
-import model.Documento;
-import model.DocumentoTipo;
+import models.Documento;
+import models.DocumentoTipo;
 import utilities.HTMLFileLoader;
 
 /**
@@ -30,7 +32,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        // Create a DocumentoTipo object.
+       /* // Create a DocumentoTipo object.
         DocumentoTipo docTipo = new DocumentoTipo(1, "Requerimento");
 
         // Create a Documento object and set its properties.
@@ -90,6 +92,22 @@ public class Main extends Application {
         root.getChildren().addAll(htmlEditor, btnCopy);
         scene.setRoot(root);
 
+        stage.setScene(scene);
+        stage.show();*/
+    	
+    	Parent root = null;
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
+			root = fxmlLoader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+       Scene scene = new Scene(root, 900, 600);
+		//Scene scene = new Scene (root, 1780, 1040);
+    
+        stage.setTitle("Main");
         stage.setScene(scene);
         stage.show();
     }

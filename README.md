@@ -4,6 +4,8 @@ Este código Java demonstra como ler um objeto Java, incorporá-lo em um editor HT
 
 Para adicionar as varíaveis ao conteúdo HTML foi utilizado React JS.
 
+Adicionado diagrama (GoJs) com relacionamentos.
+
 ## Descrição do Código
 
 - A classe `Main` é a classe principal.
